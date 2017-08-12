@@ -1,5 +1,5 @@
 # To Do
-- [ ] page numbers
+- [x] page numbers
+- [ ] sentence case titles
 - [ ] update research interests
 - [ ] add section on press coverage
-- [ ] sentence case titles
