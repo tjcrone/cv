@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# parse cronecv.tex proposal section
+AMOUNTS=`grep '\\$' cronecv.tex | grep -v circ | grep -v Career | grep -v bullet | cut -d'$' -f2 | sed 's/,//' | cut -d'}' -f1`
+COUNT=`grep '\\$' cronecv.tex | grep -v circ | grep -v Career | grep -v bullet | cut -d'$' -f2 | sed 's/,//' | cut -d'}' -f1 | wc -l | sed 's/ *//' `
+OPERATION=`grep '\\$' cronecv.tex | grep -v circ | grep -v Career | grep -v bullet | cut -d'$' -f2 | sed 's/,//' | cut -d'}' -f1 | paste -sd+ -`
+TOTAL=`grep '\\$' cronecv.tex | grep -v circ | grep -v Career | grep -v bullet | cut -d'$' -f2 | sed 's/,//' | cut -d'}' -f1 | paste -sd+ - | bc`
+
+echo "Summing $COUNT awards:"
+echo
+echo $OPERATION
+echo
+echo "Funding total: $TOTAL"
+
